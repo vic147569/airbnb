@@ -5,16 +5,10 @@
     "baseUrl": "./",
     "moduleResolution": "node",
     "paths": {
-      "@/*":[
-        "src/*"
-      ]
+      "@/*": ["src/*"],
+      "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
     },
     "jsx": "preserve",
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable",
-      "ScriptHost"
-    ]
+    "lib": ["ESNext", "DOM", "DOM.Iterable", "ScriptHost"]
   }
 }

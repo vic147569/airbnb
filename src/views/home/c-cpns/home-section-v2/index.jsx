@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { SectionV2Wrapper } from './style'
 import SectionHeader from '@/components/section-header'
-import SectionTabs from '@/components'
+import SectionTabs from '@/components/section-tabs'
 import SectionRooms from '@/components/section-rooms'
 
 const HomeSectionV2 = memo(function HomeSectionV2(props) {

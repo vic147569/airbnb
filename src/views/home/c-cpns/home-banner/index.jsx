@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { BannerWrapper } from './style'
 
 const HomeBanner = memo(() => {
-  return <BannerWrapper>HomeBanner</BannerWrapper>
+  return <BannerWrapper />
 })
 
 HomeBanner.displayName = 'HomeBanner'

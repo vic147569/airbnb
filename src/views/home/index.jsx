@@ -5,12 +5,10 @@ import { HomeWrapper } from './style'
 import HomeBanner from './c-cpns/home-banner'
 import { fetchHomeDataAction } from '@/store/modules/home'
 import HomeSectionV1 from './c-cpns/home-section-v1'
-import SectionHeader from '@/components/section-header'
-import SectionRooms from '@/components/section-rooms'
+import HomeSectionV2 from './c-cpns/home-section-v2'
+import { isEmptyObject } from '@/utils'
 
 export const Home = memo(() => {
-  const dispatch = useDispatch()
-
   const { goodPriceInfo, highScoreInfo, discountInfo } = useSelector(
     (state) => ({
       goodPriceInfo: state.home.goodPriceInfo,
@@ -20,6 +18,7 @@ export const Home = memo(() => {
     shallowEqual
   )
 
+  const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchHomeDataAction())
   }, [dispatch])
@@ -28,12 +27,9 @@ export const Home = memo(() => {
     <HomeWrapper>
       <HomeBanner />
       <div className="content">
-        <div className="discount">
-          <SectionHeader title={discountInfo.title} subtitle={discountInfo.subtitle} />
-          <SectionRooms roomList={discountInfo.dest_list?.['佛山']} itemWidth="33.33%" />
-        </div>
-        <HomeSectionV1 infoData={goodPriceInfo} />
-        <HomeSectionV1 infoData={highScoreInfo} />
+        {isEmptyObject(discountInfo) && <HomeSectionV2 infoData={discountInfo} />}
+        {isEmptyObject(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo} />}
+        {isEmptyObject(highScoreInfo) && <HomeSectionV1 infoData={highScoreInfo} />}
       </div>
     </HomeWrapper>
   )

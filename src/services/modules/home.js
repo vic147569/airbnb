@@ -15,3 +15,7 @@ export function getHomeDiscountData() {
 export function getHomeHotRecommendData() {
   return HttpRequest.get({ url: '/home/hotrecommenddest' })
 }
+
+export function getHomeLongForData() {
+  return HttpRequest.get({ url: '/home/longfor' })
+}

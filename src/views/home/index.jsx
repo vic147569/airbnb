@@ -7,14 +7,16 @@ import { fetchHomeDataAction } from '@/store/modules/home'
 import HomeSectionV1 from './c-cpns/home-section-v1'
 import HomeSectionV2 from './c-cpns/home-section-v2'
 import { isEmptyObject } from '@/utils'
+import HomeLongfor from './c-cpns/home-longfor'
 
 export const Home = memo(() => {
-  const { goodPriceInfo, highScoreInfo, discountInfo, recommendInfo } = useSelector(
+  const { goodPriceInfo, highScoreInfo, discountInfo, recommendInfo, longforInfo } = useSelector(
     (state) => ({
       goodPriceInfo: state.home.goodPriceInfo,
       highScoreInfo: state.home.highScoreInfo,
       discountInfo: state.home.discountInfo,
-      recommendInfo: state.home.recommendInfo
+      recommendInfo: state.home.recommendInfo,
+      longforInfo: state.home.longforInfo
     }),
     shallowEqual
   )
@@ -30,6 +32,7 @@ export const Home = memo(() => {
       <div className="content">
         {isEmptyObject(discountInfo) && <HomeSectionV2 infoData={discountInfo} />}
         {isEmptyObject(recommendInfo) && <HomeSectionV2 infoData={recommendInfo} />}
+        {isEmptyObject(longforInfo) && <HomeLongfor infoData={longforInfo} />}
         {isEmptyObject(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo} />}
         {isEmptyObject(highScoreInfo) && <HomeSectionV1 infoData={highScoreInfo} />}
       </div>

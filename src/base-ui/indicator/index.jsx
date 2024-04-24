@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { IndicatorWrapper } from './style'
 
 const Indicator = memo((props) => {
-  const { selectIndex } = props
+  const { selectIndex = 0 } = props
   const contentRef = useRef()
 
   useEffect(() => {

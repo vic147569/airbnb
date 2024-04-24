@@ -1,4 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
+import Demo from '@/views/demo'
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 
@@ -22,6 +23,10 @@ const routes = [
   {
     path: '/detail',
     element: <Detail />
+  },
+  {
+    path: '/demo',
+    element: <Demo />
   }
 ]
 

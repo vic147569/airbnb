@@ -2,7 +2,7 @@ import { memo } from 'react'
 import PropTypes from 'prop-types'
 
 const IconArrowLeft = memo((props) => {
-  const { height = 10, width = 10 } = props
+  const { height = 12, width = 12 } = props
   return (
     <svg
       viewBox="0 0 18 18"

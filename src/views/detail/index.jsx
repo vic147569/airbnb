@@ -1,11 +1,22 @@
 import { memo } from 'react'
+import { shallowEqual, useSelector } from 'react-redux'
+import { DetailWrapper } from './style'
+import DetailPicture from './c-cpns/detail-pictures'
+import DetailInfo from './c-cpns/detail-info'
 
 const Detail = memo(() => {
+  const { detailInfo } = useSelector(
+    (state) => ({
+      detailInfo: state.detail.detailInfo
+    }),
+    shallowEqual
+  )
+
   return (
-    <div>
-      <div className="header">header</div>
-      <h2>Detail</h2>
-    </div>
+    <DetailWrapper>
+      <DetailPicture pictureUrls={detailInfo.picture_urls} />
+      <DetailInfo />
+    </DetailWrapper>
   )
 })
 

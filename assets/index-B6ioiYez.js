@@ -1,4 +1,4 @@
-import{u as p,r as i,j as e,t as x,I as C,P as h,b as B,s as S}from"./index-DnDUboic.js";import{I as T,a as D,c as P}from"./icon_arrow_right-TcnA5DFL.js";const z=p.div``,R=p.div`
+import{u as p,r as i,j as e,t as x,I as C,P as h,b as B,s as S}from"./index-C64FoTvw.js";import{I as T,a as D,c as P}from"./icon_arrow_right-CSVMocAI.js";const z=p.div``,R=p.div`
   position: relative;
   > .pictures {
     display: flex;
